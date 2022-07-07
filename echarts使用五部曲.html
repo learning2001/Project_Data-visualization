@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 2.准备一个具有大小的dom容器 */
+        .box{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <!-- 1.引入echarts.js文件 -->
+    <script src="/js/echarts.min.js"></script>
+    <script>
+        //3. echarts.init(dom容器); 初始化实例对象
+        var myChart = echarts.init(document.querySelector(".box"));
+        //4. 指定配置项和数据
+        var option = {
+            title: {
+                text: '第一个 ECharts 实例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        // 5.把配置项给实例对象
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
